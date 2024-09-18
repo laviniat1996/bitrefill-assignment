@@ -15,7 +15,6 @@ export const DropdownContainer = styled.div`
   right: 0;
   background-color: #FFFFFF;
   padding: 24px;
-  width: 327px;
   border-radius: 12px;
 `;
 
