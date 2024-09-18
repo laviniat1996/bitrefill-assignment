@@ -6,8 +6,9 @@ export const GridContainer = styled.div`
   background-color: #F8FAF9;
   margin: 0 auto;
   flex-wrap: wrap;
-  justify-content: center;
   padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
 `;
 
 export const Card = styled.div`
