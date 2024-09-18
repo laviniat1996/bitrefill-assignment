@@ -24,11 +24,11 @@ Ensure you have the following installed on your machine:
 
  - If you are using npm:
 
- `npm install`
+    `npm install`
 
  - If you are using yarn:
  
- `yarn install`
+    `yarn install`
 
 ### Running the Project
 
@@ -36,11 +36,11 @@ To start the React development server:
 
 - If you are using npm:
 
-`npm run start`
+    `npm run start`
 
 - If you are using yarn:
 
-`yarn start`
+    `yarn start`
 
 ### Building for Production
 
@@ -48,8 +48,8 @@ To create a production build:
 
 - If you are using npm:
 
-`npm run build`
+    `npm run build`
 
 - If you are using yarn:
 
-`yarn build`
+    `yarn build`
