@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Header } from './components/Header/Header';
+import { ProductGrid } from './components/ProductGrid/ProductGrid';
+import productsData from './data.json'; 
+import { GlobalStyle } from './fonts/GlobalFont';
 
-function App() {
+const products = productsData.products;
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Header/>
+      <ProductGrid products={products} />
+    </>
   );
-}
+};
 
 export default App;
