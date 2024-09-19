@@ -7,8 +7,11 @@ export const GridContainer = styled.div`
   margin: 0 auto;
   flex-wrap: wrap;
   padding-top: 40px;
-  padding-left: 10%;
-  padding-right: 10%;
+  justify-content: center;
+
+  @media (max-width: 340px) {
+    gap: 0;
+  }
 `;
 
 export const Card = styled.div`
@@ -40,10 +43,9 @@ export const Card = styled.div`
   }
 
   &:nth-last-child(1) {
-    margin-right: auto;
+    margin-right: 67%;
   }
 `;
-
 
 export const ProductImageContainer = styled.div`
   display: flex;
@@ -52,6 +54,14 @@ export const ProductImageContainer = styled.div`
   width: 100%; 
   height: 206px; 
   border: 1px solid #ECEFED;
+
+  @media (max-width: 768px) {
+    height: 180px;
+  }
+
+  @media (max-width: 480px) {
+    height: 160px;
+  }
 `;
 
 export const ProductImage = styled.img`
@@ -65,6 +75,10 @@ export const ProductName = styled.h3`
   font-size: 18px;
   font-weight: 600;
   margin: 10px 0 0; 
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const ProductPrice = styled.p`
@@ -72,4 +86,8 @@ export const ProductPrice = styled.p`
   font-size: 16px;
   font-weight: 400px;
   margin: 10px 0 0; 
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;

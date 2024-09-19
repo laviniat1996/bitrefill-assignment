@@ -16,6 +16,10 @@ export const DropdownContainer = styled.div`
   background-color: #FFFFFF;
   padding: 24px;
   border-radius: 12px;
+
+  @media (max-width: 380px) {
+    right: -30px;
+  }
 `;
 
 export const CartItemContainer = styled.div`

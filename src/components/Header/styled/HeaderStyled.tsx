@@ -8,7 +8,6 @@ export const HeaderContainer = styled.header`
   height: 68px;
   width: 100%;
   border-bottom: 1px solid #ECEFED; 
-  margin: 0 auto;
 `;
 
 export const CartIconContainer = styled.div`
@@ -21,7 +20,6 @@ export const CartIconContainer = styled.div`
   @media (max-width: 1200px) and (min-width: 900px) {
     margin-right: 3%;
   }
-
 `;
 
 export const CartIconWrapper = styled.div`
