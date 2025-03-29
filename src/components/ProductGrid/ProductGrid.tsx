@@ -3,10 +3,13 @@ import { ProductGridProps, Product } from '../../types';
 import { Modal } from '../Modal/Modal'; 
 import { ProductDetails } from '../ProductDetails/ProductDetails';
 import {
+  PageWrapper,
+  PageContainer,
   Card,
   GridContainer,
   ProductImage,
   ProductImageContainer,
+  ProductInfo,
   ProductName,
   ProductPrice,
 } from './styled/ProductGridStyled';
@@ -19,7 +22,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
     setSelectedProduct(product);
   }, []);
 
-  // close the modal
   const closeModal = useCallback(() => {
     setSelectedProduct(null);
   }, []);
@@ -31,25 +33,29 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
         <ProductImageContainer>
           <ProductImage src={product.image} alt={product.name} />
         </ProductImageContainer>
-        <ProductName>{product.name}</ProductName>
-        <ProductPrice>
-          ${product.range.min} – ${product.range.max}
-        </ProductPrice>
+        <ProductInfo>
+          <ProductName>{product.name}</ProductName>
+          <ProductPrice>
+            ${product.range.min} – ${product.range.max}
+          </ProductPrice>
+        </ProductInfo>
       </Card>
     ))
   ), [products, openModal]);
 
   return (
-    <>
-      <GridContainer>
-        {productCards}
-      </GridContainer>
+    <PageWrapper>
+      <PageContainer>
+        <GridContainer>
+          {productCards}
+        </GridContainer>
 
-      <Modal isOpen={selectedProduct !== null} onClose={closeModal}>
-        {selectedProduct && (
-          <ProductDetails product={selectedProduct} onClose={closeModal} />
-        )}
-      </Modal>
-    </>
+        <Modal isOpen={selectedProduct !== null} onClose={closeModal}>
+          {selectedProduct && (
+            <ProductDetails product={selectedProduct} onClose={closeModal} />
+          )}
+        </Modal>
+      </PageContainer>
+    </PageWrapper>
   );
 };
