@@ -1,6 +1,3 @@
-// types.ts
-
-// src/types.ts
 
 export interface Product {
   id: string;
@@ -13,7 +10,7 @@ export interface Product {
   };
   currency: string;
   description?: string;
-  selectedPrice?: number; // Optional selected price for each product
+  selectedPrice?: number; 
 }
 
 
@@ -22,6 +19,6 @@ export interface ProductGridProps {
 }
 
 export interface ProductDetailsProps {
-  product: Product;       // Changed from 'products: Product[]' to 'product: Product'
-  onClose: () => void;    // Include the onClose function as a prop
+  product: Product;      
+  onClose: () => void;   
 }

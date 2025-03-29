@@ -45,7 +45,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
         {productCards}
       </GridContainer>
 
-      {/* display the modal if a product is selected */}
       <Modal isOpen={selectedProduct !== null} onClose={closeModal}>
         {selectedProduct && (
           <ProductDetails product={selectedProduct} onClose={closeModal} />

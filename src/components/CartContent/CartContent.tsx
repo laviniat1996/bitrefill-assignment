@@ -58,20 +58,18 @@ export const CartDropdownMenu: React.FC<CartDropdownMenuProps> = ({ closeDropdow
 
   return (
     <>
-      {/* overlay to capture outside clicks and darken the background */}
       <Overlay onClick={closeDropdown} />
       <DropdownContainer ref={dropdownRef} onClick={(e) => e.stopPropagation()}>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p> // message when the cart is empty
         ) : (
           <>
-            {/* map through cart items and display each one */}
             {cartItems.map((item: CartItem, index: number) => (
               <CartItemContainer key={index}>
-                <CartItemImage src={item.product.image} alt={item.product.name} /> {/* image of the cart item */}
+                <CartItemImage src={item.product.image} alt={item.product.name} />
                 <CartItemDetails>
-                  <CartItemName>{item.product.name}</CartItemName> {/* name of the product */}
-                  <CartItemPrice>${item.selectedPrice} value</CartItemPrice> {/* selected price of the product */}
+                  <CartItemName>{item.product.name}</CartItemName> 
+                  <CartItemPrice>${item.selectedPrice} value</CartItemPrice> 
                 </CartItemDetails>
 
                 <CartItemActions>
@@ -83,21 +81,20 @@ export const CartDropdownMenu: React.FC<CartDropdownMenuProps> = ({ closeDropdow
                       size="small"
                     />
                     <RemoveButton onClick={() => removeFromCart(item.product.id, item.selectedPrice)}>
-                      <TrashSVG /> {/* button to remove the item from the cart */}
+                      <TrashSVG />
                     </RemoveButton>
                   </CartItemActionRow>
-                  <CartItemTotalPrice>${item.selectedPrice * item.quantity}</CartItemTotalPrice> {/* total price for this item */}
+                  <CartItemTotalPrice>${item.selectedPrice * item.quantity}</CartItemTotalPrice> 
                 </CartItemActions>
               </CartItemContainer>
             ))}
 
-            {/* total price of all items in the cart */}
+
             <TotalContainer>
               <span>Total</span>
               <span>${totalPrice}</span>
             </TotalContainer>
 
-            {/* button to proceed to checkout */}
             <StyledButton center={true} onClick={closeDropdown}>Continue to checkout</StyledButton>
           </>
         )}

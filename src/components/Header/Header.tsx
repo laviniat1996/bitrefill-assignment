@@ -71,7 +71,6 @@ export const Header: React.FC<HeaderProps> = () => {
         </CartIconWrapper>
         <CartText>Cart</CartText>
 
-        {/* show dropdown if it's open */}
         {isDropdownOpen && (
           <CartDropdownMenu closeDropdown={handleCloseDropdown} />
         )}
